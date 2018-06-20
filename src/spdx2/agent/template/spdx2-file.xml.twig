@@ -4,6 +4,8 @@
    are permitted in any medium without royalty provided the copyright notice and this notice are preserved.
    This file is offered as-is, without any warranty.
 #}
+{% if copyrights|default is empty and concludedLicenses|default is empty and scannerLicenses|default is empty %}
+{% else %}
 <spdx:hasFile>
   <spdx:File rdf:about="{{ uri }}#SPDXRef-item{{ fileId|url_encode }}">
     <spdx:fileName>{{ fileName|e }}</spdx:fileName>
@@ -58,3 +60,4 @@
 {% endif %}
   </spdx:File>
 </spdx:hasFile>
+{% endif %}
